@@ -9,19 +9,24 @@ const Navbar = () => {
         const navTween = gsap.timeline({
             scrollTrigger: {
                 trigger: 'nav',
-                start: 'bottom-top'
+                start: 'bottom top',
+
             }
         })
+
         navTween.fromTo('nav',
-            {//From 
+            {
                 backgroundColor: 'transparent'
-            }, {//To
-            backgroundColor: '00000050',
-            backgroundfiler: 'blur(10px)',
-            duration: 1,
-            ease: 'power1.inOut'
-        }, [])
+            },
+            {
+                backgroundColor: 'rgba(0,0,0,0.5)', // semi-transparent
+                backFilter: 'blur(10px)',        // correct property
+                duration: 1,
+                ease: 'power1.inOut'
+            }
+        )
     })
+
     return (
         <nav >
             <div>
